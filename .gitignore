@@ -1,0 +1,26 @@
+.DS_Store
+
+*.pbxuser
+*.perspective
+*.perspectivev3
+
+*.mode1v3
+*.mode2v3
+
+*.xcodeproj/xcuserdata/*.xcuserdatad
+
+*/xcshareddata/*
+*/xcuserdata/*
+
+*.xccheckout
+*.xcuserdatad
+
+DerivedData
+build
+
+*.swp
+
+*.lock
+
+# User-specific xcconfig files
+Xcode-Configurations/DEVELOPMENT_TEAM.xcconfig
