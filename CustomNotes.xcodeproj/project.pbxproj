@@ -245,10 +245,9 @@
 			};
 			buildConfigurationList = AA81FC701E7DB2F700C342FA /* Build configuration list for PBXProject "CustomNotes" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
