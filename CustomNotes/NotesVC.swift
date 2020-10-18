@@ -40,10 +40,10 @@ class NotesVC: UIViewController, UITextViewDelegate {
     }
 
 
-    func onBack(_ backButton: UIBarButtonItem) {
+    @objc func onBack(_ backButton: UIBarButtonItem) {
         if let text = textView.text {
             if note == nil {
-                let date = NSDate()
+                let date = Date()
                 coreStack.storeNote(withTitle: text, onDate: date)
             } else {
                 note!.title = text
@@ -62,14 +62,14 @@ class NotesVC: UIViewController, UITextViewDelegate {
         }
     }
 
-    func onShare(_ button:UIBarButtonItem) {
+    @objc func onShare(_ button:UIBarButtonItem) {
         var objectsToShare = [String]()
 
         if let text = textView.text {
             objectsToShare.append(text)
         }
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+        activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
         self.present(activityVC, animated: true, completion: nil)
 
         activityVC.completionWithItemsHandler =
@@ -82,7 +82,7 @@ class NotesVC: UIViewController, UITextViewDelegate {
                         returnedItems[0] as! NSExtensionItem
 
                     let textItemProvider =
-                        textItem.attachments![0] as! NSItemProvider
+                        textItem.attachments![0] 
 
                     if textItemProvider.hasItemConformingToTypeIdentifier(
                         kUTTypeText as String) {

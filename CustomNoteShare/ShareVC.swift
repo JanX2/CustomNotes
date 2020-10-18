@@ -60,7 +60,7 @@ class ShareVC: SLComposeServiceViewController {
 
     override func didSelectPost() {
         guard let text = textView.text else {return}
-        let date = NSDate()
+        let date = Date()
 
         if selectedNote == nil {
             if let string = urlString {

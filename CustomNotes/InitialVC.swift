@@ -19,7 +19,7 @@ class InitialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationWillEnterForeground, object: nil, queue: nil, using: reload)
+        NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil, using: reload)
 
 
         tableView = UITableView()
@@ -77,13 +77,13 @@ class InitialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(dest, animated: false)
     }
 
-    func onAdd(_ barItem: UIBarButtonItem) {
+    @objc func onAdd(_ barItem: UIBarButtonItem) {
         let dest = NotesVC()
         navigationController?.pushViewController(dest, animated: false)
     }
 
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let note = notes[indexPath.row]
             notes.remove(at: indexPath.row)

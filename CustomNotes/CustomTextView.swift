@@ -32,7 +32,7 @@ public class ClickableTextView: UITextView {
         self.addGestureRecognizer(tap)
     }
 
-    func onTap(_ sender: UITapGestureRecognizer) {
+    @objc func onTap(_ sender: UITapGestureRecognizer) {
 
         let myTextView = sender.view as! UITextView
         let layoutManager = myTextView.layoutManager

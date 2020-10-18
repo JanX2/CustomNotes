@@ -22,7 +22,7 @@ final class CoreDataStack {
 
     var fetchedNotes = [Note]()
 
-    func storeNote(withTitle title: String, onDate date: NSDate) {
+    func storeNote(withTitle title: String, onDate date: Date) {
         let note = Note(context: context)
         note.title = title
         note.date = date
