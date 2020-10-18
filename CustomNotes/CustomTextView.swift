@@ -62,7 +62,7 @@ public class ClickableTextView: UITextView {
                     //                    print("Did find",count)
 
                     var count2 = count
-                    while(count2 < orgString.characters.count){
+                    while(count2 < orgString.count){
 
                         let myRange = NSRange(location: count2 - 1, length: 2)
                         let substring = (orgString as NSString).substring(with: myRange)
@@ -72,9 +72,9 @@ public class ClickableTextView: UITextView {
 
 
                         //If it was at the end of textView
-                        if count2  == orgString.characters.count {
+                        if count2  == orgString.count {
 
-                            let length = orgString.characters.count - count
+                            let length = orgString.count - count
                             let myRange = NSRange(location: count, length: length)
 
                             let substring = (orgString as NSString).substring(with: myRange)

@@ -32,7 +32,7 @@ class ShareVC: SLComposeServiceViewController {
         let contentTypeURL = kUTTypeURL as String
         let contentTypeText = kUTTypeText as String
 
-        for attachment in extensionItem.attachments as! [NSItemProvider] {
+        for attachment in extensionItem.attachments! {
             if attachment.isURL {
                 attachment.loadItem(forTypeIdentifier: contentTypeURL, options: nil, completionHandler: { (results, error) in
                     let url = results as! URL?
@@ -85,10 +85,12 @@ class ShareVC: SLComposeServiceViewController {
 
 
     override func configurationItems() -> [Any]! {
-        let item = SLComposeSheetConfigurationItem()
-        item?.title = "Selected Note"
-        item?.value = selectedNote?.title ?? "New Note"
-        item?.tapHandler = {
+        guard let item = SLComposeSheetConfigurationItem() else {
+            return []
+        }
+        item.title = "Selected Note"
+        item.value = selectedNote?.title ?? "New Note"
+        item.tapHandler = {
             let vc = ShareSelectTVC()
             vc.delegate = self
             vc.userNotes = self.notes
