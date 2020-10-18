@@ -98,6 +98,7 @@
 				AA81FC761E7DB2F700C342FA /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		AA81FC761E7DB2F700C342FA /* Products */ = {
 			isa = PBXGroup;
